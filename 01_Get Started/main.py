@@ -18,5 +18,7 @@ root = Tk()
 root.title("Fist Window") # this method to change the window tilte
 root.geometry("400x200") # to change the size of window
 
+x = Label(root, text="Hello, World!", font=("Times New Roman",17))
+x.pack()
 
 root.mainloop()
