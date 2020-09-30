@@ -20,6 +20,25 @@ class App(Frame):
 		self.button_frame = Frame(self)
 		self.button_frame.pack()
 
+		self.b1 = Button(self.button_frame)
+		self.b1["text"] = "clik here"
+		self.b1["bg"] = "green"
+		self.b1["fg"] = "white"
+		self.b1["command"] = self.manipulate
+		self.b1.grid(row=0, column=0, padx=6)
+
+		self.b2 = Button(self.button_frame)
+		self.b2["text"] = "cancel"
+		self.b2["bg"] = "red"
+		self.b2["fg"] = "white"
+		self.b2["command"] = self.reset
+		self.b2.grid(row=0, column=1, padx=6)
+
+	def manipulate(self):
+		pass
+
+	def reset(self):
+		pass
 
 
 root = Tk()
