@@ -17,6 +17,9 @@ class App(Frame):
 		self.status["font"] = ("Courier New",28)
 		self.status.pack(pady=150)
 
+		self.button_frame = Frame(self)
+		self.button_frame.pack()
+
 
 
 root = Tk()
