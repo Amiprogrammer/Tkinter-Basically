@@ -37,10 +37,15 @@ class App(Frame):
 		self.b2.grid(row=0, column=1, padx=6)
 
 	def manipulate(self):
-		pass
+		self.data = random.choice(["Guido Van Rossum","Python","Tkinter","Sun labs","GUI"])
+
+		self.status.config(text=f"Hello, {self.data}!")
 
 	def reset(self):
-		pass
+		if( messagebox.askyesno("first program","do you want to reset the text!")):
+			self.status.config(text="Hello, World!")
+		else:
+			messagebox.showinfo("first program","Hello, {}!".format(self.data))
 
 
 root = Tk()
