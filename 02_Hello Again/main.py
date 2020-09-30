@@ -1,4 +1,6 @@
 from tkinter import *
+from tkinter import messagebox
+import random
 
 # template
 class App(Frame):
