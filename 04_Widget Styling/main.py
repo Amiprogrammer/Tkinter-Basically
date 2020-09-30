@@ -6,8 +6,12 @@ root.title("First Program")
 root.geometry("600x400")
 
 def clicked(event):
-	pass
+	print(f"position : x  {repr(event.x_root)} y  {repr(event.y_root)}")
 
-root.bind("<Button-1>", clicked)
+def keyboard(event):
+	print(f"keyboard :  {repr(event.keysym)}")
+
+root.bind("<ButtonRelease-1>", clicked)
+root.bind("<Key>", keyboard)
 
 root.mainloop()
