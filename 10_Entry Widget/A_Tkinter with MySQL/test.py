@@ -18,6 +18,9 @@ master.iconbitmap(r"C:/Users/Juliao JM/Downloads/py-white.ico")
 master.title("firs program")
 master.geometry("650x450")
 
+def input_date():
+	pass
+
 def canceled():
 	entry_name.delete(0, END)
 	entry_address.delete(0, END)
@@ -87,7 +90,7 @@ label_address.grid(row=2, column=0)
 entry_address = Entry(form_insert)
 entry_address.grid(row=2, column=1, padx=18)
 
-input_button = Button(form_insert, text="OK", bg="blue", fg="white", command=master.destroy)
+input_button = Button(form_insert, text="OK", bg="blue", fg="white", command=input_date)
 input_button.grid(row=3, columnspan=3, pady=20)
 
 cancel_button = Button(form_insert, text="Cancel", bg="red", fg="white", command=canceled)
