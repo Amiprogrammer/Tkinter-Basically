@@ -7,4 +7,11 @@ db = mysql.connector.connect(
 	password="jmq123jj"
 )
 
-print(db)
+mycursor = db.cursor()
+
+# mycursor.execute("CREATE DATABASE tkinter")
+
+mycursor.execute("SHOW DATABASES")
+
+for x in mycursor:
+	print(x)
