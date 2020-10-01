@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 import mysql.connector
 
 mydb = mysql.connector.connect(
@@ -16,10 +17,35 @@ result = mycursor.fetchall()
 master = Tk()
 master.iconbitmap(r"C:/Users/Juliao JM/Downloads/py-white.ico")
 master.title("firs program")
-master.geometry("650x450")
+master.geometry("800x600")
 
 def input_date():
-	pass
+	entry_name.focus_set()
+	entry_address.focus_set()
+
+	# get all date here
+	estudent_name = entry_name.get()
+	estudent_gender = var.get()
+	estudent_address= entry_address.get()
+
+	if( (len(estudent_name) > 0 and len(estudent_gender) > 0) and len(estudent_address) > 0):
+
+		sql = "INSERT INTO estudent (name,gender,address) VALUES (%s,%s,%s)"
+		val = (estudent_name.lower(),estudent_gender.lower(),estudent_address.lower())
+
+		mycursor.execute(sql,val)
+
+		mydb.commit()
+
+		if( mycursor.rowcount > 0 ):
+			messagebox.showinfo("row",f"{mycursor.rowcount} row inserted!")
+			mycursor.execute("SELECT * FROM estudent")
+			result = mycursor.fetchall()
+		else:
+			messagebox.showwarning("failed",f"{mycursor.rowcount} row not inserted!")
+	else:
+		messagebox.showerror("error","Please insert anything in form insert!")
+
 
 def canceled():
 	entry_name.delete(0, END)
