@@ -10,15 +10,9 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO estudent (name,gender,address) VALUES (%s,%s,%s)"
-val = [
-	("joao nunes","m","becora"),
-	("elia amaral","f","fatumeta"),
-	("aurito valentiin","m","cacaulidu")
-]
+mycursor.execute("SELECT * FROM estudent")
 
-mycursor.executemany(sql,val)
+result = mycursor.fetchall()
 
-mydb.commit()
-
-print(mycursor.rowcount, " inserted record(s).")
+for x in result:
+	print(x)
