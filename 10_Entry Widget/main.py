@@ -34,14 +34,14 @@ form.pack(pady=40)
 label = Label(form, text="Type Something :", font=("Courier New",12))
 label.grid(row=0, column=0)
 
-entry = Entry(form, font=("Courier New",12))
+entry = Entry(form, font=("Courier New",12), show=("*"))
 entry.grid(row=0, column=1)
 
 confirm_button = Button(form, text="OK", font=("Courier New",12), bg="black", fg="white", command=get_in_input)
-confirm_button.grid(row=1, column=0, pady=10)
+confirm_button.grid(row=1, column=0, columnspan=1, pady=10)
 
 deleted_button = Button(form, text="Delete", font=("Courier New",12), bg="red", fg="white", command=delete_all_input)
-deleted_button.grid(row=1, column=1)
+deleted_button.grid(row=1, column=1, columnspan=1, pady=10)
 
 result = Label(form, text="Result", font=("Courier New",15))
 result.grid(row=2, columnspan=2, pady=60)
