@@ -8,4 +8,11 @@ mydb = mysql.connector.connect(
 	database="tkinter"
 )
 
-print(mydb)
+mycursor = mydb.cursor()
+
+# mycursor.execute("CREATE TABLE estudent (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), gender CHAR(1), address VARCHAR(255))")
+
+mycursor.execute("SHOW TABLES")
+
+for x in mycursor:
+	print(x)
