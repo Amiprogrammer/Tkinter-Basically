@@ -10,9 +10,15 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-# mycursor.execute("CREATE TABLE estudent (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), gender CHAR(1), address VARCHAR(255))")
+sql = "INSERT INTO estudent (name,gender,address) VALUES (%s,%s,%s)"
+val = [
+	("joao nunes","m","becora"),
+	("elia amaral","f","fatumeta"),
+	("aurito valentiin","m","cacaulidu")
+]
 
-mycursor.execute("SHOW TABLES")
+mycursor.executemany(sql,val)
 
-for x in mycursor:
-	print(x)
+mydb.commit()
+
+print(mycursor.rowcount, " inserted record(s).")
