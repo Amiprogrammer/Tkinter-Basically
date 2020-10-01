@@ -19,7 +19,8 @@ master.title("firs program")
 master.geometry("650x450")
 
 def canceled():
-	pass
+	entry_name.delete(0, END)
+	entry_address.delete(0, END)
 
 indexing = Label(master, text="Estudent Table", font=("Courier New",26))
 indexing.pack(pady=20)
