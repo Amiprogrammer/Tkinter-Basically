@@ -18,6 +18,9 @@ master.iconbitmap(r"C:/Users/Juliao JM/Downloads/py-white.ico")
 master.title("firs program")
 master.geometry("650x450")
 
+def canceled():
+	pass
+
 indexing = Label(master, text="Estudent Table", font=("Courier New",26))
 indexing.pack(pady=20)
 
@@ -86,7 +89,7 @@ entry_address.grid(row=2, column=1, padx=18)
 input_button = Button(form_insert, text="OK", bg="blue", fg="white", command=master.destroy)
 input_button.grid(row=3, columnspan=3, pady=20)
 
-cancel_button = Button(form_insert, text="Cancel", bg="red", fg="white", command=master.destroy)
+cancel_button = Button(form_insert, text="Cancel", bg="red", fg="white", command=canceled)
 cancel_button.grid(row=4, columnspan=3)
 
 master.mainloop()
