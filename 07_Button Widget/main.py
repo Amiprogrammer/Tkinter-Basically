@@ -8,7 +8,9 @@ master.geometry("600x400")
 def func_here():
 	print("Button is pressed!")
 
-b1 = Button(master, text="OK", command=func_here)
-b1.pack()
+image = PhotoImage(file="github.png")
+
+b1 = Button(master, text="OK", command=func_here, state=NORMAL, image=image, compound=CENTER, fg="blue")
+b1.pack(padx=40, pady=40)
 
 master.mainloop()
